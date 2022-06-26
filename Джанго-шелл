@@ -1,0 +1,17 @@
+from NewsPortal.models import *
+
+User1 = User.objects.create_user('Пользователь1')
+
+User2 = User.objects.create_user('Пользователь2')
+
+Author1 = Author.objects.create(user = User1)
+
+Author2 = Author.objects.create(user = User2)
+
+News = Post.objects.create(author_post = Author1,type = 'N',heading = 'Первая новость',text =' Шойгу проинспектировал войска, учавствующие в СВО')
+
+Article1 = Post.objects.create(author_post = Author1,type = 'A',heading = 'Первая статья',text ='​Тепловые машины (двигатели) – устройства, которые преобразуют тепловую энергию в поле
+зную механическую.')
+
+Article2 = Post.objects.create(author_post = Author2,type = 'A',heading = 'Вторая статья',text ='​Машина, в которой электрическая энергия преобразуется в механическую')
+
